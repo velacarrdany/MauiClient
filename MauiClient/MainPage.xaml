@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiClient.MainPage">
+
+    <VerticalStackLayout>
+        
+        <Label FontSize="Header">Add</Label>
+        
+        <Entry x:Name="Model" Placeholder="Type car model"></Entry>
+
+        <Entry x:Name="txtBrand" Placeholder="Type car brand"></Entry>
+
+        <Entry x:Name="txtPrice" Placeholder="Type car price"></Entry>
+
+        <DatePicker x:Name="txtRelease"></DatePicker>
+
+        <Button x:Name="-btnSave" Text="Save"></Button>
+
+    </VerticalStackLayout>
+
+</ContentPage>

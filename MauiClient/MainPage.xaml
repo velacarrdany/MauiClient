@@ -9,7 +9,7 @@
         
             <Label FontSize="Medium" HorizontalOptions="Center" Grid.Column="1" Grid.Row="0">Add</Label>
 
-            <Entry x:Name="Model" Placeholder="Type car model" Grid.Column="1" Grid.Row="1"></Entry>
+            <Entry x:Name="txtModel" Placeholder="Type car model" Grid.Column="1" Grid.Row="1"></Entry>
 
             <Entry x:Name="txtBrand" Placeholder="Type car brand" Grid.Column="1" Grid.Row="2"></Entry>
 

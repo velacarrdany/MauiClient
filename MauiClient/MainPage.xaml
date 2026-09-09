@@ -3,11 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiClient.MainPage">
 
-    <Grid ColumnDefinitions="2*,*,2*">
+    <Grid ColumnDefinitions="*,2*,*">
 
-        <VerticalStackLayout>
+        <VerticalStackLayout Grid.Column="1">
         
-            <Label FontSize="Header" Grid.Column="1" Grid.Row="0">Add</Label>
+            <Label FontSize="Medium" HorizontalOptions="Center" Grid.Column="1" Grid.Row="0">Add</Label>
 
             <Entry x:Name="Model" Placeholder="Type car model" Grid.Column="1" Grid.Row="1"></Entry>
 
@@ -15,7 +15,7 @@
 
             <Entry x:Name="txtPrice" Placeholder="Type car price" Grid.Column="1" Grid.Row="3"></Entry>
 
-            <DatePicker x:Name="txtRelease" Grid.Column="1" Grid.Row="4"></DatePicker>
+            <DatePicker x:Name="txtRelease" HorizontalOptions="Center" Grid.Column="1" Grid.Row="4"></DatePicker>
 
             <Button x:Name="btnSave" Text="Save" Clicked="btnSave_Clicked" Grid.Column="1" Grid.Row="5"></Button>
 

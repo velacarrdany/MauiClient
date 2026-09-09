@@ -4,6 +4,6 @@
              x:Class="MauiClient.Index"
              Title="Index">
 
-    <Button x:Name="btnAdd" Text="Add" Clicked="btnAdd_Clicked"></Button>
+    <Button x:Name="btnAdd" Text="Add" Clicked="btnAdd_Clicked" WidthRequest="100" HeightRequest="40" HorizontalOptions="Center" VerticalOptions="Start"></Button>
     
 </ContentPage>

@@ -12,45 +12,47 @@
                 HeightRequest="40"
                 HorizontalOptions="Center"
                 VerticalOptions="Start"></Button>
-        
-        <Grid ColumnDefinitions="*,*,*,*,*,*">
-            <CollectionView x:Name="collection">
-                <CollectionView.Header>
-                    <Label Grid.Column="0"
-                           Grid.Row="0"
-                           HorizontalOptions="Center">Id</Label>
-                    <Label Grid.Column="1"
-                           Grid.Row="0"
-                           HorizontalOptions="Center">Brand</Label>
-                    <Label Grid.Column="2"
-                           Grid.Row="0"
-                           HorizontalOptions="Center">Model</Label>
-                    <Label Grid.Column="3"
-                           Grid.Row="0"
-                           HorizontalOptions="Center">Price</Label>
-                    <Label Grid.Column="4"
-                           Grid.Row="0"
-                           HorizontalOptions="Center">Release</Label>
-                    <Label Grid.Column="5"
-                           Grid.Row="0"
-                           HorizontalOptions="Center">Actions</Label>
-                </CollectionView.Header>
-                
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <HorizontalStackLayout>
-                            <Label Text="{Binding Id}"></Label>
-                            <Label Text="{Binding Brand}"></Label>
-                            <Label Text="{Binding Model}"></Label>
-                            <Label Text="{Binding Price}"></Label>
-                            <Label Text="{Binding Release}"></Label>
-                            <Button x:Name="btnDelete"
+
+        <CollectionView x:Name="collection">
+            <CollectionView.HeaderTemplate>
+                <DataTemplate>
+                    <Grid ColumnDefinitions="*,*,*,*,*,*">
+                        <Label Grid.Column="0"
+                               Grid.Row="0"
+                               HorizontalOptions="Center">Id</Label>
+                        <Label Grid.Column="1"
+                               Grid.Row="0"
+                               HorizontalOptions="Center">Brand</Label>
+                        <Label Grid.Column="2"
+                               Grid.Row="0"
+                               HorizontalOptions="Center">Model</Label>
+                        <Label Grid.Column="3"
+                               Grid.Row="0"
+                               HorizontalOptions="Center">Price</Label>
+                        <Label Grid.Column="4"
+                               Grid.Row="0"
+                               HorizontalOptions="Center">Release</Label>
+                        <Label Grid.Column="5"
+                               Grid.Row="0"
+                               HorizontalOptions="Center">Actions</Label>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.HeaderTemplate>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <HorizontalStackLayout>
+                        <Label Text="{Binding Id}"></Label>
+                        <Label Text="{Binding Brand}"></Label>
+                        <Label Text="{Binding Model}"></Label>
+                        <Label Text="{Binding Price}"></Label>
+                        <Label Text="{Binding Release}"></Label>
+                        <Button x:Name="btnDelete"
                                     Text="Delete"></Button>
-                        </HorizontalStackLayout>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-        </Grid>
+                    </HorizontalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </VerticalStackLayout>
     
 </ContentPage>

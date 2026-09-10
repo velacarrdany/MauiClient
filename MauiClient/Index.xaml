@@ -4,6 +4,27 @@
              x:Class="MauiClient.Index"
              Title="Index">
 
-    <Button x:Name="btnAdd" Text="Add" Clicked="btnAdd_Clicked" WidthRequest="100" HeightRequest="40" HorizontalOptions="Center" VerticalOptions="Start"></Button>
+    <VerticalStackLayout>
+        <Button x:Name="btnAdd"
+                Text="Add"
+                Clicked="btnAdd_Clicked"
+                WidthRequest="100"
+                HeightRequest="40"
+                HorizontalOptions="Center"
+                VerticalOptions="Start"></Button>
+        
+        <Grid ColumnDefinitions="*,*,*,*,*,*">
+            <CollectionView x:Name="collection">
+                <CollectionView.Header>
+                    <Label>Id</Label>
+                    <Label>Brand</Label>
+                    <Label>Model</Label>
+                    <Label>Price</Label>
+                    <Label>Release</Label>
+                    <Label>Actions</Label>
+                </CollectionView.Header>
+            </CollectionView>
+        </Grid>
+    </VerticalStackLayout>
     
 </ContentPage>

@@ -41,15 +41,20 @@
 
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <HorizontalStackLayout>
-                        <Label Text="{Binding Id}"></Label>
-                        <Label Text="{Binding Brand}"></Label>
-                        <Label Text="{Binding Model}"></Label>
-                        <Label Text="{Binding Price}"></Label>
-                        <Label Text="{Binding Release}"></Label>
+                    <Grid ColumnDefinitions="=40,*,*,*,*">
+                        <Label Grid.Column="0"
+                               Text="{Binding Id}"></Label>
+                        <Label Grid.Column="1"
+                               Text="{Binding Brand}"></Label>
+                        <Label Grid.Column="2"
+                               Text="{Binding Model}"></Label>
+                        <Label Grid.Column="3"
+                               Text="{Binding Price}"></Label>
+                        <Label Grid.Column="4"
+                               Text="{Binding Release}"></Label>
                         <Button x:Name="btnDelete"
                                     Text="Delete"></Button>
-                    </HorizontalStackLayout>
+                    </>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

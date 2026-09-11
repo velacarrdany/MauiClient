@@ -17,6 +17,8 @@ public partial class Index : ContentPage
         RestClient client = new RestClient();
         RestRequest request = new RestRequest(url, Method.Get);
         var res = await client.ExecuteGetAsync(request);
+
+        List<Car> car = (List<Car>)JsonConvert.DeserializeObject(res.Content, typeof(List<Car>));
     }
 
     private void btnAdd_Clicked(object sender, EventArgs e)

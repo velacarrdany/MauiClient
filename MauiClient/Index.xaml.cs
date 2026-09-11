@@ -12,9 +12,11 @@ public partial class Index : ContentPage
         Loaded += Index_Loaded;
 	}
 
-    private void Index_Loaded(object? sender, EventArgs e)
+    private async void Index_Loaded(object? sender, EventArgs e)
     {
-        throw new NotImplementedException();
+        RestClient client = new RestClient();
+        RestRequest request = new RestRequest(url, Method.Get);
+        var res = await client.ExecuteGetAsync(request);
     }
 
     private void btnAdd_Clicked(object sender, EventArgs e)

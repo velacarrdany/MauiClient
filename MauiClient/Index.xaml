@@ -4,60 +4,64 @@
              x:Class="MauiClient.Index"
              Title="Index">
 
-    <VerticalStackLayout>
-        <Button x:Name="btnAdd"
-                Text="Add"
-                Clicked="btnAdd_Clicked"
-                WidthRequest="100"
-                HeightRequest="40"
-                HorizontalOptions="Center"
-                VerticalOptions="Start"></Button>
+    <ScrollView>
+        <VerticalStackLayout>
+            <Button x:Name="btnAdd"
+                    Text="Add"
+                    Clicked="btnAdd_Clicked"
+                    WidthRequest="100"
+                    HeightRequest="40"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Start"></Button>
 
-        <CollectionView x:Name="collection">
-            <CollectionView.HeaderTemplate>
-                <DataTemplate>
-                    <Grid ColumnDefinitions="*,*,*,*,*,*">
-                        <Label Grid.Column="0"
-                               Grid.Row="0"
-                               HorizontalOptions="Center">Id</Label>
-                        <Label Grid.Column="1"
-                               Grid.Row="0"
-                               HorizontalOptions="Center">Brand</Label>
-                        <Label Grid.Column="2"
-                               Grid.Row="0"
-                               HorizontalOptions="Center">Model</Label>
-                        <Label Grid.Column="3"
-                               Grid.Row="0"
-                               HorizontalOptions="Center">Price</Label>
-                        <Label Grid.Column="4"
-                               Grid.Row="0"
-                               HorizontalOptions="Center">Release</Label>
-                        <Label Grid.Column="5"
-                               Grid.Row="0"
-                               HorizontalOptions="Center">Actions</Label>
-                    </Grid>
-                </DataTemplate>
-            </CollectionView.HeaderTemplate>
+            <CollectionView x:Name="collection">
+                <CollectionView.HeaderTemplate>
+                    <DataTemplate>
+                        <Grid ColumnDefinitions="*,*,*,*,*,*">
+                            <Label Grid.Column="0"
+                                   Grid.Row="0"
+                                   HorizontalOptions="Center">Id</Label>
+                            <Label Grid.Column="1"
+                                   Grid.Row="0"
+                                   HorizontalOptions="Center">Brand</Label>
+                            <Label Grid.Column="2"
+                                   Grid.Row="0"
+                                   HorizontalOptions="Center">Model</Label>
+                            <Label Grid.Column="3"
+                                   Grid.Row="0"
+                                   HorizontalOptions="Center">Price</Label>
+                            <Label Grid.Column="4"
+                                   Grid.Row="0"
+                                   HorizontalOptions="Center">Release</Label>
+                            <Label Grid.Column="5"
+                                   Grid.Row="0"
+                                   HorizontalOptions="Center">Actions</Label>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.HeaderTemplate>
 
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <Grid ColumnDefinitions="=40,*,*,*,*">
-                        <Label Grid.Column="0"
-                               Text="{Binding Id}"></Label>
-                        <Label Grid.Column="1"
-                               Text="{Binding Brand}"></Label>
-                        <Label Grid.Column="2"
-                               Text="{Binding Model}"></Label>
-                        <Label Grid.Column="3"
-                               Text="{Binding Price}"></Label>
-                        <Label Grid.Column="4"
-                               Text="{Binding Release}"></Label>
-                        <Button x:Name="btnDelete"
-                                    Text="Delete"></Button>
-                    </>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-    </VerticalStackLayout>
-    
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid ColumnDefinitions="=40,*,*,*,*">
+                            <Label Grid.Column="0"
+                                   Text="{Binding Id}"></Label>
+                            <Label Grid.Column="1"
+                                   Text="{Binding Brand}"></Label>
+                            <Label Grid.Column="2"
+                                   Text="{Binding Model}"></Label>
+                            <Label Grid.Column="3"
+                                   Text="{Binding Price}"></Label>
+                            <Label Grid.Column="4"
+                                   Text="{Binding Release}"></Label>
+                            <Button x:Name="btnDelete"
+                                    Grid.Column="5"
+                                    Text="Delete"
+                                    Clicked="btnDelete_Clicked"
+                                    HorizontalOptions="Center"></Button>
+                            </>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

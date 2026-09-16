@@ -14,11 +14,44 @@ public partial class Index : ContentPage
 
     private async void Index_Loaded(object? sender, EventArgs e)
     {
+        loadTable();
+    }
+
+    private void btnAdd_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new MainPage());
+    }
+
+    private async void btnDelete_Clicked(object sender, EventArgs e)
+    {
+        Button button = (Button)sender;
+        Grid grid = (Grid)button.Parent;
+        Label lblId = grid.ElementAt(0);
+        int Id = int.Parse(lblId.Text);
+
+        RestClient client = new RestClient();
+        RestRequest request = new RestRequest(url + Id, Method.Delete);
+        var res = await client.ExecuteDeleteAsync(request);
+
+        if(res.StatusCode == System.Net.HttpStatusCode.OK)
+        {
+            await DisplayAlertAsync("Information", "Car deleted", "OK");
+        }
+        else
+        {
+            await DisplayAlertAsync("Error", res.StatusCode + " " + res.ErrorMessage, "OK");
+        }
+
+        loadTable();
+    }
+
+    private async void loadTable()
+    {
         RestClient client = new RestClient();
         RestRequest request = new RestRequest(url, Method.Get);
         var res = await client.ExecuteGetAsync(request);
 
-        if(res.StatusCode == System.Net.HttpStatusCode.OK)
+        if (res.StatusCode == System.Net.HttpStatusCode.OK)
         {
             List<Car> cars = (List<Car>)JsonConvert.DeserializeObject(res.Content, typeof(List<Car>));
 
@@ -26,8 +59,8 @@ public partial class Index : ContentPage
         }
     }
 
-    private void btnAdd_Clicked(object sender, EventArgs e)
+    private void searchCar(int Id)
     {
-        Navigation.PushAsync(new MainPage());
+
     }
 }

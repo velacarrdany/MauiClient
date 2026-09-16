@@ -5,7 +5,7 @@ namespace MauiClient;
 
 public partial class Index : ContentPage
 {
-	public const string url = "https://67db76a51fd9e43fe4749f9c.mockapi.io/api/v1/Auto";
+	public const string url = "https://67db76a51fd9e43fe4749f9c.mockapi.io/api/v1/Auto/";
 	public Index()
 	{
 		InitializeComponent();
@@ -16,7 +16,7 @@ public partial class Index : ContentPage
     {
         loadTable();
     }
-
+    
     private void btnAdd_Clicked(object sender, EventArgs e)
     {
         Navigation.PushAsync(new MainPage());
@@ -26,7 +26,7 @@ public partial class Index : ContentPage
     {
         Button button = (Button)sender;
         Grid grid = (Grid)button.Parent;
-        Label lblId = grid.ElementAt(0);
+        Label lblId = (Label)grid.ElementAt(0);
         int Id = int.Parse(lblId.Text);
 
         RestClient client = new RestClient();

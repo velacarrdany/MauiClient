@@ -17,22 +17,22 @@
             <CollectionView x:Name="collection">
                 <CollectionView.HeaderTemplate>
                     <DataTemplate>
-                        <Grid ColumnDefinitions="*,*,*,*,*,*">
+                        <Grid ColumnDefinitions="*,*,*,*,*,*" RowSpacing="10">
                             <Label Grid.Column="0"
                                    Grid.Row="0"
                                    HorizontalOptions="Center">Id</Label>
                             <Label Grid.Column="1"
                                    Grid.Row="0"
-                                   HorizontalOptions="Center">Brand</Label>
+                                   HorizontalOptions="Center">Marca</Label>
                             <Label Grid.Column="2"
                                    Grid.Row="0"
-                                   HorizontalOptions="Center">Model</Label>
+                                   HorizontalOptions="Center">Modelo</Label>
                             <Label Grid.Column="3"
                                    Grid.Row="0"
-                                   HorizontalOptions="Center">Price</Label>
+                                   HorizontalOptions="Center">Precio</Label>
                             <Label Grid.Column="4"
                                    Grid.Row="0"
-                                   HorizontalOptions="Center">Release</Label>
+                                   HorizontalOptions="Center">Lanzamiento</Label>
                             <Label Grid.Column="5"
                                    Grid.Row="0"
                                    HorizontalOptions="Center">Actions</Label>
@@ -42,23 +42,23 @@
 
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Grid ColumnDefinitions="=40,*,*,*,*">
+                        <Grid ColumnDefinitions="40,*,*,*,*,*" RowSpacing="10">
                             <Label Grid.Column="0"
                                    Text="{Binding Id}"></Label>
                             <Label Grid.Column="1"
-                                   Text="{Binding Brand}"></Label>
+                                   Text="{Binding Marca}"></Label>
                             <Label Grid.Column="2"
-                                   Text="{Binding Model}"></Label>
+                                   Text="{Binding Modelo}"></Label>
                             <Label Grid.Column="3"
-                                   Text="{Binding Price}"></Label>
+                                   Text="{Binding Precio}"></Label>
                             <Label Grid.Column="4"
-                                   Text="{Binding Release}"></Label>
+                                   Text="{Binding Lanzamiento}"></Label>
                             <Button x:Name="btnDelete"
                                     Grid.Column="5"
                                     Text="Delete"
                                     Clicked="btnDelete_Clicked"
                                     HorizontalOptions="Center"></Button>
-                            </>
+                        </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>

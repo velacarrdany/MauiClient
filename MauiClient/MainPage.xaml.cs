@@ -4,6 +4,8 @@ namespace MauiClient
 {
     public partial class MainPage : ContentPage
     {
+
+        public const string url = "https://67db76a51fd9e43fe4749f9c.mockapi.io/api/v1/Auto";
         public MainPage()
         {
             InitializeComponent();
@@ -12,10 +14,10 @@ namespace MauiClient
         private async void btnSave_Clicked(object sender, EventArgs e)
         {
             Car car = new Car();
-            car.Brand = txtBrand.Text;
-            car.Model = txtModel.Text;
-            car.Price = Convert.ToDouble(txtPrice.Text);
-            car.Release = txtRelease.Date.Value;
+            car.Marca = txtMarca.Text;
+            car.Modelo = txtModelo.Text;
+            car.Precio = Convert.ToDouble(txtPrecio.Text);
+            car.Lanzamiento = txtLanzamiento.Date.Value;
 
             RestClient client = new RestClient();
             RestRequest request = new RestRequest(url, Method.Post);
@@ -30,10 +32,10 @@ namespace MauiClient
                 if (opcion == "Register another")
                 {
 
-                    txtBrand.Text = "";
-                    txtModel.Text = "";
-                    txtPrice.Text = "";
-                    txtRelease.Date = DateTime.Now;
+                    txtMarca.Text = "";
+                    txtModelo.Text = "";
+                    txtPrecio.Text = "";
+                    txtLanzamiento.Date = DateTime.Now;
 
                 }
                 else if (opcion == "Return to menu")
@@ -45,5 +47,6 @@ namespace MauiClient
                     await DisplayAlertAsync("Error", "Use couldn't be created", "OK");
                 }
             }
+        }
     }
 }

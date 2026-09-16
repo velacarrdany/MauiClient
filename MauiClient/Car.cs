@@ -7,9 +7,9 @@ namespace MauiClient
     public class Car
     {
         public int Id {  get; set; }
-        public string? Brand { get; set; }
-        public string? Model { get; set; }
-        public double Price { get; set; }
-        public DateTime Release { get; set; }
+        public string? Marca { get; set; }
+        public string? Modelo { get; set; }
+        public double Precio { get; set; }
+        public DateTime Lanzamiento { get; set; }
     }
 }

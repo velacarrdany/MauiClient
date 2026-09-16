@@ -9,13 +9,13 @@
         
             <Label FontSize="Medium" HorizontalOptions="Center" Grid.Column="1" Grid.Row="0">Add</Label>
 
-            <Entry x:Name="txtModel" Placeholder="Type car model" Grid.Column="1" Grid.Row="1"></Entry>
+            <Entry x:Name="txtModelo" Placeholder="Type car Modelo" Grid.Column="1" Grid.Row="1"></Entry>
 
-            <Entry x:Name="txtBrand" Placeholder="Type car brand" Grid.Column="1" Grid.Row="2"></Entry>
+            <Entry x:Name="txtMarca" Placeholder="Type car Marca" Grid.Column="1" Grid.Row="2"></Entry>
 
-            <Entry x:Name="txtPrice" Placeholder="Type car price" Grid.Column="1" Grid.Row="3"></Entry>
+            <Entry x:Name="txtPrecio" Placeholder="Type car Precio" Grid.Column="1" Grid.Row="3"></Entry>
 
-            <DatePicker x:Name="txtRelease" HorizontalOptions="Center" Grid.Column="1" Grid.Row="4"></DatePicker>
+            <DatePicker x:Name="txtLanzamiento" HorizontalOptions="Center" Grid.Column="1" Grid.Row="4"></DatePicker>
 
             <Button x:Name="btnSave" Text="Save" Clicked="btnSave_Clicked" Grid.Column="1" Grid.Row="5"></Button>
 

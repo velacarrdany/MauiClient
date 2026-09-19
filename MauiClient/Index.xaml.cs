@@ -6,6 +6,9 @@ namespace MauiClient;
 public partial class Index : ContentPage
 {
 	public const string url = "https://67db76a51fd9e43fe4749f9c.mockapi.io/api/v1/Auto/";
+
+    List<Car> carsList = new List<Car>();
+
 	public Index()
 	{
 		InitializeComponent();
@@ -56,6 +59,7 @@ public partial class Index : ContentPage
             List<Car> cars = (List<Car>)JsonConvert.DeserializeObject(res.Content, typeof(List<Car>));
 
             collection.ItemsSource = cars;
+            carsList = cars;
         }
     }
 
@@ -71,6 +75,8 @@ public partial class Index : ContentPage
 
     private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
     {
+        List<Car> filteredList = carsList.FindAll(x => x.Marca.Contains(txtSearch.Text));
 
+        collection.ItemsSource = filteredList;
     }
 }

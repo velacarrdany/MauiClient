@@ -6,18 +6,24 @@
 
     <ScrollView>
         <VerticalStackLayout>
-            <Button x:Name="btnAdd"
-                    Text="Add"
-                    Clicked="btnAdd_Clicked"
-                    WidthRequest="100"
-                    HeightRequest="40"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Start"></Button>
-
-            <CollectionView x:Name="collection">
+            <HorizontalStackLayout>
+                <SearchBar x:Name="txtSearch"
+                           Placeholder="Search..."
+                           MinimumWidthRequest="400"
+                           MaximumHeightRequest="400"
+                           TextChanged="txtSearch_TextChanged"></SearchBar>
+                <Button x:Name="btnAdd"
+                        Text="Add"
+                        Clicked="btnAdd_Clicked"
+                        WidthRequest="100"
+                        HeightRequest="40"
+                        VerticalOptions="Start"></Button>
+            </HorizontalStackLayout>
+                <CollectionView x:Name="collection">
                 <CollectionView.HeaderTemplate>
                     <DataTemplate>
-                        <Grid ColumnDefinitions="*,*,*,*,*,*" RowSpacing="10">
+                        <Grid ColumnDefinitions="*,*,*,*,*,*,*"
+                              RowSpacing="10">
                             <Label Grid.Column="0"
                                    Grid.Row="0"
                                    HorizontalOptions="Center">Id</Label>
@@ -35,6 +41,7 @@
                                    HorizontalOptions="Center">Lanzamiento</Label>
                             <Label Grid.Column="5"
                                    Grid.Row="0"
+                                   Grid.ColumnSpan="2"
                                    HorizontalOptions="Center">Actions</Label>
                         </Grid>
                     </DataTemplate>
@@ -42,7 +49,7 @@
 
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Grid ColumnDefinitions="40,*,*,*,*,*" RowSpacing="10">
+                        <Grid ColumnDefinitions="40,*,*,*,*,*,*" RowSpacing="10">
                             <Label Grid.Column="0"
                                    Text="{Binding Id}"></Label>
                             <Label Grid.Column="1"
@@ -53,8 +60,13 @@
                                    Text="{Binding Precio}"></Label>
                             <Label Grid.Column="4"
                                    Text="{Binding Lanzamiento}"></Label>
-                            <Button x:Name="btnDelete"
+                            <Button x:Name="btnEdit"
+                                    Text="Edit"
                                     Grid.Column="5"
+                                    Clicked="btnEdit_Clicked"
+                                    HorizontalOptions="Center"></Button>
+                            <Button x:Name="btnDelete"
+                                    Grid.Column="6"
                                     Text="Delete"
                                     Clicked="btnDelete_Clicked"
                                     HorizontalOptions="Center"></Button>

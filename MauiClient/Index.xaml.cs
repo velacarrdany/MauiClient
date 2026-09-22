@@ -63,14 +63,15 @@ public partial class Index : ContentPage
         }
     }
 
-    private void searchCar(int Id)
-    {
-
-    }
-
     private void btnEdit_Clicked(object sender, EventArgs e)
     {
+        Button button = (Button)sender;
+        Grid grid = (Grid)button.Parent;
+        Label lblId = (Label)grid.ElementAt(0);
+        int Id = int.Parse(lblId.Text);
 
+        RestClient cient = new RestClient();
+        RestRequest request = new RestRequest(url + Id, Method.Get);
     }
 
     private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)

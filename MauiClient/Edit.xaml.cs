@@ -14,6 +14,15 @@ public partial class Edit : ContentPage
     {
         InitializeComponent();
         car = _car;
+        Loaded += Edit_Loaded;
+    }
+
+    private void Edit_Loaded(object? sender, EventArgs e)
+    {
+        txtMarca.Text = car.Marca;
+        txtModelo.Text = car.Modelo;
+        txtPrecio.Text = car.Precio.ToString();
+        txtLanzamiento.Date = car.Lanzamiento;
     }
 
     private void btnSave_Clicked(object sender, EventArgs e)

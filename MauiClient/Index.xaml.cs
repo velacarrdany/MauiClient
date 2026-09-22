@@ -63,15 +63,20 @@ public partial class Index : ContentPage
         }
     }
 
-    private void btnEdit_Clicked(object sender, EventArgs e)
+    private async void btnEdit_Clicked(object sender, EventArgs e)
     {
         Button button = (Button)sender;
         Grid grid = (Grid)button.Parent;
         Label lblId = (Label)grid.ElementAt(0);
         int Id = int.Parse(lblId.Text);
 
-        RestClient cient = new RestClient();
+        RestClient client = new RestClient();
         RestRequest request = new RestRequest(url + Id, Method.Get);
+        var res = await client.ExecuteGetAsync(request);
+
+        Car car = (Car)JsonConvert.DeserializeObject(res.Content, typeof(Car));
+
+        await Navigation.PushAsync(new Edit(car));
     }
 
     private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)

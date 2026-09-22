@@ -38,5 +38,8 @@ public partial class Edit : ContentPage
 
         RestClient client = new RestClient();
         RestRequest request = new RestRequest(url + car.Id, Method.Put);
+
+        request.AddBody(a);
+        var res = client.ExecutePutAsync(request);
     }
 }

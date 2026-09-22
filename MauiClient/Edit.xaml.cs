@@ -28,7 +28,7 @@ public partial class Edit : ContentPage
         txtLanzamiento.Date = car.Lanzamiento;
     }
 
-    private void btnSave_Clicked(object sender, EventArgs e)
+    private async void btnSave_Clicked(object sender, EventArgs e)
     {
         Car a = new Car();
         a.Marca = txtMarca.Text;
@@ -40,6 +40,15 @@ public partial class Edit : ContentPage
         RestRequest request = new RestRequest(url + car.Id, Method.Put);
 
         request.AddBody(a);
-        var res = client.ExecutePutAsync(request);
+        var res = await client.ExecutePutAsync(request);
+
+        if (res.StatusCode == System.Net.HttpStatusCode.OK)
+        {
+            await DisplayAlertAsync("Success", "Car updated", "OK");
+            await Navigation.PopAsync();
+        } else
+        {
+            await DisplayAlertAsync("Error", "Error updating car", "OK");
+        }
     }
 }
